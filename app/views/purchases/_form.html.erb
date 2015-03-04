@@ -1,0 +1,22 @@
+<%= form_for(@purchase) do |f| %> 
+  <fieldset>
+    <ol> 
+      <li> 
+        <%= f.label :name %> 
+        <%= f.text_field :name, autofocus:true %> 
+      </li>
+      <li> 
+        <%= f.label :cost %> 
+        <%= f.text_field :cost, size: 8 %>
+      </li>
+      <li> 
+        <%= f.label 'Add a Member' %>
+        <%= f.collection_select :member_id, Member.all, :id, :full_name %>
+      </li>
+    </ol>
+      <p>
+        <%= f.submit %>
+        <%= link_to "Cancel", purchases_path, class: 'button' %>
+      </p>
+  </fieldset>
+<% end %> 

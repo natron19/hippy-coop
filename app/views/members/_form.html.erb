@@ -1,0 +1,20 @@
+<%= form_for(@member) do |f| %> 
+
+  <fieldset>
+    <ol> 
+      <li> 
+        <%= f.label :first_name %> 
+        <%= f.text_field :first_name, autofocus: true %> 
+      </li>
+      <li> 
+        <%= f.label :last_name %> 
+        <%= f.text_field :last_name %>
+      </li>
+ 
+    </ol>
+      <p>
+        <%= f.submit %>
+        <%= link_to "Cancel", members_path, class: 'button' %>
+      </p>
+  </fieldset>
+<% end %> 

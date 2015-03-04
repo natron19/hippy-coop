@@ -1,0 +1,14 @@
+<h1>All Members</h1>
+
+<ul>
+  <% @members.each do |member| %>
+    <li>
+      <%= link_to member.full_name, member %>   
+    </li>
+  <% end %>
+</ul>
+
+<p> 
+
+  <%= link_to "Add Member", new_member_path(@member) %> 
+</p>

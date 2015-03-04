@@ -1,0 +1,13 @@
+<h1> View Room</h1>
+
+<p> Room: <%= @room.name %> </p> 
+<p> Member: 
+  <% if @room.member %> 
+    <%= @room.member.full_name %> 
+  <% else %> 
+    <%= link_to "Add Member", members_path %> 
+  <% end %> 
+</p> 
+<p> Entered on <%= @room.created_at %> </p> 
+
+<%= link_to 'Edit', edit_room_path(@room), class: "button" %> 

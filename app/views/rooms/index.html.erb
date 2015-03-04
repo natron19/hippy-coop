@@ -1,0 +1,13 @@
+<h1>All Rooms</h1>
+
+<% @rooms.each do |room| %> 
+<p>
+  Room: <%= link_to room.name, room_path(room.id) %> 
+  <br>
+  Total Rent: <%= room.rent %> 
+</p>
+<% end %> 
+
+<p> 
+  <%= link_to "Add Room", new_room_path %> 
+</p>

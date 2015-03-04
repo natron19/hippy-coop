@@ -1,0 +1,28 @@
+<h1><%= @member.full_name %> Monthly Rent Due </h1>
+
+
+<p> Base Rent: 
+
+<% if @member.rooms.present? %> 
+  <%= number_to_currency(@member.full_rent) %> 
+<% else %> 
+  <%= link_to "Add a room", rooms_path %> 
+<% end %> 
+
+</p> 
+
+<p> Purchases: 
+  <p> <% @member.purchases.each do |p| %> 
+  <%= p.name %> 
+  <%= number_to_currency(p.cost) %> <br>
+  <% end %> 
+  </p>
+</p> 
+
+===============
+<p> Rent due: 
+  <%= number_to_currency(@member.rent_due) %> </p>
+   
+ 
+
+<%= link_to 'Edit', edit_member_path(@member), class: "button" %> 

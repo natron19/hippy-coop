@@ -1,0 +1,16 @@
+<h1>All Purchases</h1>
+
+<ul> 
+<% @purchases.each do |purchase| %>
+     <li> 
+      Item: <%= link_to purchase.name, purchase %>  <br> 
+        Cost: <%= purchase.cost %> 
+     </li> 
+     <br>
+<% end %>
+</ul> 
+
+<p> 
+  <%= link_to "New Purchase", new_purchase_path(@purchase), class: "button" %>
+</p>
+

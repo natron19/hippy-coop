@@ -1,0 +1,22 @@
+<%= form_for(@room) do |f| %> 
+  <fieldset>
+    <ol> 
+      <li> 
+        <%= f.label :name %> 
+        <%= f.text_field :name, autofocus:true %> 
+      </li>
+        <li> 
+        <%= f.label :rent %> 
+        <%= f.text_field :rent%> 
+      </li>
+      <li> 
+        <%= f.label :member %> 
+        <%= f.collection_select :member_id, Member.all, :id, :full_name %>
+      </li>
+    </ol>
+      <p>
+        <%= f.submit %>
+        <%= link_to "Cancel", rooms_path, class: 'button' %>
+      </p>
+  </fieldset>
+<% end %> 

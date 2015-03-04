@@ -1,0 +1,14 @@
+<h1>View Purchase Details</h1>
+
+<p> Item: <%= @purchase.name %> </p> 
+<p> Cost: <%= @purchase.cost %> </p> 
+<p> by <%= @purchase.member.full_name %> </p> 
+<p> Created at <%= @purchase.created_at %> </p> 
+
+<p>
+<%= link_to 'Edit', edit_purchase_path(@purchase), class: "button" %> 
+</p>
+
+<p>
+  <%= link_to "Delete", @purcahse, method: :delete, data: {Confirm: "Are you sure" }, class: "button" %> 
+</p>
